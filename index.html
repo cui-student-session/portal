@@ -7,41 +7,36 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Standard Favicon Reference (Local) -->
-    <link rel="shortcut icon" href="Content/img/fav.png">
-
-    <!-- Document-Relative Stylesheet References (Removed leading slashes) -->
-    <link href="Content/css/bootstrap.css" rel="stylesheet">
-    <link href="Content/css/style.css" rel="stylesheet">
-    <link href="Content/css/style_cuonline_portal.css" rel="stylesheet">
+    <!-- Document-Relative CSS References (Removed leading slashes) -->
+    <link href="Content/css/bootstrap.css" rel="stylesheet"/>
+    <link href="Content/css/style.css" rel="stylesheet"/>
+    <link href="Content/css/style_cuonline_portal.css" rel="stylesheet"/>
     <link href="Content/css/ResultCard.css" rel="stylesheet">
 
-    <!-- Document-Relative Script References -->
+    <!-- Document-Relative JS References -->
     <script src="Content/js/jquery-1.10.2.js"></script>
     <script src="Content/js/bootstrap.js"></script>
     <script src="Content/js/html5shiv.js"></script>
     <script src="Content/js/less-1.3.3.js"></script>
     <script src="Content/js/MenuActivation.js"></script>
-
-    <style>
-        .main_body .content_area {
-            padding: 0 0 10px 0;
-            margin: 10px 0;
-        }
-        .main_body .content_area .title_search_area {
-            border-radius: 0;
-        }
-        .question_box h3 {
-            margin: 50px 0;
-            text-align: center;
-            font-size: 30px;
-        }
-        .sweet-alert > h2 {
-            font-size: 1.5rem !important;
-        }
-    </style>
 </head>
-
+<style>
+    .main_body .content_area {
+        padding: 0 0 10px 0;
+        margin: 10px 0;
+    }
+    .main_body .content_area .title_search_area {
+        border-radius: 0;
+    }
+    .question_box h3 {
+        margin: 50px 0;
+        text-align: center;
+        font-size: 30px;
+    }
+    .sweet-alert > h2 {
+        font-size: 1.5rem !important;
+    }
+</style>
 <body>
     <script>
         $(window).load(function () {
@@ -68,30 +63,35 @@
                     </div>
                     <div class="col-md-6 column rounded_menu_boxes">
                         <ul class="pull-right">
-                            <li><a title="Home" class="home" href="#">Dashboard</a><span></span></li>
-                            <li><a title="Course Registration Card" class="regCard" href="#">Registration Card</a><span></span></li>
-                            <li><a title="Student Fees" class="fees" href="#">Fees</a><span></span></li>
-                            <li><a title="Result Card" class="marks selected" href="#">Result Card</a><span></span></li>
-                            <li><a title="My Profile" class="attndnce" href="#">Profile</a><span></span></li>
-                            <li><a title="Logout" class="reports" href="#">Logout</a><span></span></li>
+                            <li><a title="Home" class="home" id="Dash_Board" href="#">Dashboard</a><span></span></li>
+                            <li><a title="Course Registration Card" class="regCard" id="Registration_Card" href="#">Registration Card</a><span></span></li>
+                            <li><a title="Student Fees" class="fees" id="Fees" href="#">Fees</a><span></span></li>
+                            <li><a title="Result Card" class="marks selected" id="Result_Card" href="#">Result Card</a><span></span></li>
+                            <li><a title="My Profile" class="attndnce" id="My_Profile" href="#">Profile</a><span></span></li>
+                            <li><a title="Logout" class="reports" id="Sign_Out" href="#">Logout</a><span></span></li>
                         </ul>
                     </div>
-                    
-                    <!-- Profile Picture Container (Replaced broken AJAX loader with static reference) -->
+                    <!-- Restored exact picture container with static reference -->
                     <div class="col-md-2 column" style="padding-right:0">
                         <div id="divImageHolder" class="StudentPicture">
-                            <img style="float:right; border-radius: 15px; width: 125px; height: 125px;" src="avatar.jpg" alt="Profile Picture">
+                            <img style="float:right" src="avatar.jpg" alt="Profile Picture"/>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
 
-        <!-- Main Body -->
+        <!-- Main Body / Results -->
         <div class="main_body">
             <div style="min-height: 250px;" class="content_area">
-                <div style="background:#13A89E; margin-bottom: 20px; text-align: center; padding: 10px; font-weight: bold; color: white; font-size: 18px; border-radius: 4px;">
+                
+                <div class="se-pre-con" style="display: none;"></div>
+
+                <div style="background:#13A89E;margin: 5px;text-align: center;padding: 5px;font-weight: bold;color: white;font-size: 18px;">
                     Student Result Card
+                    <a id="PrintBtn" style="float:right;margin: -7px 0;" href="javascript:window.print()" title="Print Result Card">
+                        <img style="height:39px;" src="https://img.icons8.com/plasticine/2x/print.png" alt="Print Result Card">
+                    </a>
                 </div>
 
                 <!-- ==================== SEMESTER 1 (Spring 2024) ==================== -->
@@ -402,21 +402,19 @@
                 <div class="single_result_container">
                     <div class="table_container">
                         <table class="tbl_one">
-                            <tbody>
-                                <tr>
-                                    <td><b>Reg. No:</b> CIIT/SP24-BCS-044/WAH</td>
-                                    <td><b>Name:</b> OBAID AHMED</td>
-                                </tr>
-                                <tr>
-                                    <td><b>Semester:</b> Spring 2026</td>
-                                    <td><b>Father Name:</b> SAEED AKHTAR</td>
-                                </tr>
-                                <tr>
-                                    <td style="width: 100%;"><b>Program:</b> BCS (Bachelor of Science in Computer Science)</td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <tbody><tr>
+                                <td><b>Reg. No:</b> CIIT/SP24-BCS-044/WAH</td>
+                                <td><b>Name:</b>  OBAID AHMED</td>
+                            </tr>
+                            <tr>
+                                <td><b>Semester:</b> Spring 2026</td>
+                                <td><b>Father Name:</b> SAEED AKHTAR</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 100%;"><b>Program:</b>BCS (Bachelor of Science in Computer Science)</td>
+                                <td></td>
+                            </tr>
+                        </tbody></table>
                     </div>
 
                     <div class="table_container">
@@ -504,7 +502,7 @@
             </div>
         </div>
 
-        <!-- Footer -->
+        <!-- Footer Section -->
         <footer>
             <div class="col-md-12 column footer_menu">
                 <div class="inner_row">
